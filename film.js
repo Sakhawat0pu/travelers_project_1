@@ -35,7 +35,7 @@ function getPlanetData(id){
 function showFilmData(data){
     const filmDiv = document.getElementById("film-details");
     filmDiv.innerHTML = `
-    <h1>${data.title}</h1>
+    <h1 id="film-title">${data.title}</h1>
     <div id="film-info">
         <p>Released: <b>${data.release_date}</b></p>
         <p>Director: <b>${data.director}</b></p>
@@ -51,6 +51,7 @@ function showCharacters(data){
     charDiv.appendChild(h1);
 
     const characterContainer = document.createElement("div");
+    characterContainer.setAttribute("id", "char-container")
     data.forEach(character => {
         const h3 = document.createElement('h3');
         h3.innerText = character.name;
@@ -70,6 +71,7 @@ function showPlanets(data){
     planetDiv.appendChild(h1);
 
     const planetContainer = document.createElement("div");
+    planetContainer.setAttribute("id", "planet-container")
     data.forEach(planet => {
         const h3 = document.createElement('h3');
         h3.innerText = planet.name;

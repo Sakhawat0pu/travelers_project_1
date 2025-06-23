@@ -121,3 +121,52 @@ section#films a {
   border-radius: 5px;
   border: 1px solid var(--dark2);
 }
+
+#films {
+    margin-bottom: 60px;
+}
+
+#films #film-title {
+    font-size: 70px;
+    margin-bottom: 60px;
+}
+
+#films #film-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#films p{
+    font-size: 25px;
+    background-color: var(--light2);
+    color: var(--dark2);
+    padding: 20px 40px;
+    border: 1px solid var(--dark2);
+    border-radius: 5px;
+}
+
+#characters h1, #planets h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+#char-container, #planet-container {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#characters #char-container, #planets #planet-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+#char-container h3, #planet-container h3{
+    font-size: 25px;
+    background-color: var(--light2);
+    color: var(--dark2);
+    padding: 20px 40px;
+    border: 1px solid var(--dark2);
+}
