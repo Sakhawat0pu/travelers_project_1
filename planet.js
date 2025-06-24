@@ -41,10 +41,23 @@ async function displayPlanetInfo(planetID) {
     const { films, characters } = await fetchFilmsAndCharacters(planetID);
 
     // Populate planet general info
-    document.getElementById('name').textContent = planet.name;
-    document.getElementById('climate').textContent = planet.climate;
-    document.getElementById('diameter').textContent = planet.diameter;
-    document.getElementById('gravity').textContent = planet.gravity;
+    document.getElementById('planet-title').textContent = planet.name;
+    // Populate planet general info dynamically
+    const generalInfoSection = document.getElementById('generalInfo');
+    for (const [key, value] of Object.entries(planet)) {
+        const paragraph = document.createElement('p');
+        const span = document.createElement('span');
+        span.id = key;
+        paragraph.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: `;
+        if (value !== undefined){
+            span.textContent = value;
+        }
+        else{
+            span.textContent = "?";
+        }
+        paragraph.appendChild(span);
+        generalInfoSection.appendChild(paragraph);
+    }
 
     // Populate films list
     const filmsList = document.querySelector('#films ul');
@@ -58,9 +71,10 @@ async function displayPlanetInfo(planetID) {
     });
 
     // Populate characters list
-    const charactersList = document.getElementById('characters');
+    const charactersList = document.querySelector('#characters ul');
+    console.log(characters)
     characters.forEach(character => {
-        const characterItem = document.createElement('span');
+        const characterItem = document.createElement('li');
         const characterLink = document.createElement('a');
         characterLink.href = `http://localhost:3000/character.html?id=${character.id}`;
         characterLink.textContent = character.name;
