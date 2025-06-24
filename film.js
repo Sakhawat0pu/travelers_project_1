@@ -1,52 +1,43 @@
 const params = new URLSearchParams(window.location.search);
-const id = params.get('id')
+const id = parseInt(params.get('id'));
 
 function getFilmData(id){
-    if (id){
-        const url = `http://localhost:9001/api/films/${id}`;
-        fetch(url)
-        .then(res => res.json())
-        .then(data => showFilmData(data))
-        .catch(error => {
-            console.log(error);
-            alert("Something went wrong!");
-        })
-    }
-    else{
-        alert("Something went wrong!")
-    }
+    const url = `http://localhost:9001/api/films/${id}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        if(Object.keys(data).length === 0){
+            showNoContent();
+            return;
+        }
+        showFilmData(data)
+    })
+    .catch(error => {
+        console.log(error);
+        alert("Something went wrong!");
+    })
 }
 
 function getCharacterData(id){
-    if(id){
-        const url = `http://localhost:9001/api/films/${id}/characters`;
-        fetch(url)
-        .then(res => res.json())
-        .then(data => showCharacters(data))
-        .catch(error => {
-            console.log(error);
-            alert("Something went wrong!");
-        })
-    }
-    else{
-        alert("Something went wrong!")
-    }
+    const url = `http://localhost:9001/api/films/${id}/characters`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => showCharacters(data))
+    .catch(error => {
+        console.log(error);
+        alert("Something went wrong!");
+    })
 }
 
 function getPlanetData(id){
-    if(id){
-        const url = `http://localhost:9001/api/films/${id}/planets`;
-        fetch(url)
-        .then(res => res.json())
-        .then(data => showPlanets(data))
-        .catch(error => {
-            console.log(error);
-            alert("Something went wrong!");
-        })
-    }
-    else{
-        alert("Something went wrong!")
-    }
+    const url = `http://localhost:9001/api/films/${id}/planets`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => showPlanets(data))
+    .catch(error => {
+        console.log(error);
+        alert("Something went wrong!");
+    })
 }
 
 
@@ -97,8 +88,22 @@ function showPlanets(data){
         }
         planetContainer.appendChild(h3);
     });
-    planetDiv.appendChild(planetContainer)
+    planetDiv.appendChild(planetContainer);
 }
-getFilmData(id);
-getCharacterData(id);
-getPlanetData(id);
+
+function showNoContent(){
+    alert("Provide a valid id!!!")
+    const body = document.getElementById('film-body');
+    body.innerHTML = `
+    <h1 style="text-align:center; color: red; margin-top: 80px">No available data to display</h1>
+    `;
+}
+
+if(isNaN(id)){
+    showNoContent();
+}
+else{
+    getFilmData(id);
+    getCharacterData(id);
+    getPlanetData(id);
+}

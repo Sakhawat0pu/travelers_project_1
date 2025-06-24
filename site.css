@@ -70,34 +70,46 @@ label {
 }
 
 /* Character page */
-/* h1#name {
+h1#name {
   margin: 50px;
-} */
+  font-size: 45px;
+}
 
-/* #generalInfo {
+#generalInfo {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 20px;
-} */
+}
 
-/* #generalInfo p {
+#generalInfo p {
   padding: 20px;
   margin: 10px;
   color: var(--dark2);
   background-color: var(--light2);
+  border-radius: 5px;
+  border: 1px solid var(--dark2);
 }
 
-#generalInfo span {
+#generalInfo p {
   font-weight: bold;
-  font-size: 1.1em;
-} */
+  font-size: 1.6em;
+}
+
+#planets h2,
+#films h2,
+#characters h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#planets p,
+#characters span{
+    margin-left: 30px;
+}
 
 section#planets,
 section#characters,
-section#films,
-section#genralInfo,
-#name {
+section#films {
   margin: 50px;
 }
 
@@ -106,6 +118,7 @@ section#characters ul,
 section#films ul {
   list-style-type: none;
   padding: 0;
+  margin-left: 30px;
 }
 
 section#planets a,
@@ -113,37 +126,32 @@ section#characters a,
 section#films a {
   display: inline-block;
   text-decoration: none;
-  font-size: 1.1em;
-
-  /* background-color: var(--light2);
+  font-size: 1.5em;
+  background-color: var(--light2);
   color: var(--dark2);
   font-weight: bold;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  border: 1px solid var(--dark2); */
+  border: 1px solid var(--dark2);
 }
 
-#films, #generalInfo {
+#films {
     margin-bottom: 60px;
 }
 
-#films #film-title, #name {
+#films #film-title {
     font-size: 70px;
     margin-bottom: 60px;
 }
 
-#films #film-info,
-#generalInfo{
+#films #film-info{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-#films p,
-#generalInfo p,
-#planets #homeworld,
-#films li{
+#films p{
     font-size: 25px;
     background-color: var(--light2);
     color: var(--dark2);
@@ -152,32 +160,22 @@ section#films a {
     border-radius: 5px;
 }
 
-#films li,
-#homeworld,
-#generalInfo p{
-    font-weight: bold
-}
-
 #characters h1, 
-#planets h2, 
-#planets h1,
-#films h2 {
+#films h1,
+#planets h1{
     font-size: 50px;
     margin-bottom: 40px;
 }
 
 #char-container, 
 #planet-container, 
-#generalInfo, 
-#homeworld, 
-#films ul{
+#generalInfo-char{
     margin-left: 50px;
     margin-right: 50px;
 }
 
 #characters #char-container,
-#planets #planet-container,
-#films ul {
+#planets #planet-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
