@@ -70,18 +70,18 @@ label {
 }
 
 /* Character page */
-h1#name {
+/* h1#name {
   margin: 50px;
-}
+} */
 
-#generalInfo {
+/* #generalInfo {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   border: 20px;
-}
+} */
 
-#generalInfo p {
+/* #generalInfo p {
   padding: 20px;
   margin: 10px;
   color: var(--dark2);
@@ -91,11 +91,13 @@ h1#name {
 #generalInfo span {
   font-weight: bold;
   font-size: 1.1em;
-}
+} */
 
 section#planets,
 section#characters,
-section#films {
+section#films,
+section#genralInfo,
+#name {
   margin: 50px;
 }
 
@@ -113,31 +115,35 @@ section#films a {
   text-decoration: none;
   font-size: 1.1em;
 
-  background-color: var(--light2);
+  /* background-color: var(--light2);
   color: var(--dark2);
   font-weight: bold;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  border: 1px solid var(--dark2);
+  border: 1px solid var(--dark2); */
 }
 
-#films {
+#films, #generalInfo {
     margin-bottom: 60px;
 }
 
-#films #film-title {
+#films #film-title, #name {
     font-size: 70px;
     margin-bottom: 60px;
 }
 
-#films #film-info {
+#films #film-info,
+#generalInfo{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-#films p{
+#films p,
+#generalInfo p,
+#planets #homeworld,
+#films li{
     font-size: 25px;
     background-color: var(--light2);
     color: var(--dark2);
@@ -146,24 +152,40 @@ section#films a {
     border-radius: 5px;
 }
 
-#characters h1, #planets h1 {
+#films li,
+#homeworld,
+#generalInfo p{
+    font-weight: bold
+}
+
+#characters h1, 
+#planets h2, 
+#planets h1,
+#films h2 {
     font-size: 50px;
     margin-bottom: 40px;
 }
 
-#char-container, #planet-container {
+#char-container, 
+#planet-container, 
+#generalInfo, 
+#homeworld, 
+#films ul{
     margin-left: 50px;
     margin-right: 50px;
 }
 
-#characters #char-container, #planets #planet-container {
+#characters #char-container,
+#planets #planet-container,
+#films ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 40px;
     row-gap: 20px;
 }
 
-#char-container h3, #planet-container h3{
+#char-container h3, 
+#planet-container h3{
     font-size: 25px;
     background-color: var(--light2);
     color: var(--dark2);
@@ -171,3 +193,4 @@ section#films a {
     border: 1px solid var(--dark2);
     border-radius: 5px;
 }
+
