@@ -169,4 +169,5 @@ section#films a {
     color: var(--dark2);
     padding: 20px 40px;
     border: 1px solid var(--dark2);
+    border-radius: 5px;
 }
