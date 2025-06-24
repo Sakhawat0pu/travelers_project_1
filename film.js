@@ -7,7 +7,13 @@ function getFilmData(id){
         fetch(url)
         .then(res => res.json())
         .then(data => showFilmData(data))
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            alert("Something went wrong!");
+        })
+    }
+    else{
+        alert("Something went wrong!")
     }
 }
 
@@ -17,7 +23,13 @@ function getCharacterData(id){
         fetch(url)
         .then(res => res.json())
         .then(data => showCharacters(data))
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            alert("Something went wrong!");
+        })
+    }
+    else{
+        alert("Something went wrong!")
     }
 }
 
@@ -27,7 +39,13 @@ function getPlanetData(id){
         fetch(url)
         .then(res => res.json())
         .then(data => showPlanets(data))
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            alert("Something went wrong!");
+        })
+    }
+    else{
+        alert("Something went wrong!")
     }
 }
 
@@ -64,7 +82,6 @@ function showCharacters(data){
 }
 
 function showPlanets(data){
-    console.log("show planets", data)
     const planetDiv = document.getElementById("planet-details")
     const h1 = document.createElement('h1');
     h1.innerText = "Planets";
