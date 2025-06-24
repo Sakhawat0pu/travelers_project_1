@@ -93,7 +93,7 @@ function showPlanets(data){
         const h3 = document.createElement('h3');
         h3.innerText = planet.name;
         h3.onclick = () => {
-            window.location.href = `planets.html?id=${planet.id}`
+            window.location.href = `planet.html?id=${planet.id}`
         }
         planetContainer.appendChild(h3);
     });
